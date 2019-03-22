@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS201903TP7 - Dynamic Form Validatoin</title>
+</head>
+
+
+
+
+
+
+
+<body>
+    <!-- *** Form Validation:  Is used to make sites dynamic
+        Always validate with PHP for Security-->
+
+    <div>
+        Enter your name:
+        <input id="name" name="name" type="text" size="30"
+               onblur="isTheFieldEmpty(this, document.getElementById('name_help'))" />
+        <span id="name_help"></span>
+    </div>
+
+    <div>
+        Enter your street address:
+        <input id="street" name="street" type="text" size="30"
+               onblur="isAddressOk(this, document.getElementById('street_help'))" />
+        <span id="street_help"></span>
+    </div>
+
+    <div>
+        Enter your city:
+        <input id="city" name="city" type="text" size="30"
+               onblur="isTheFieldEmpty(this, document.getElementById('city_help'))" />
+        <span id="city_help"></span>
+    </div>
+
+    <div>
+        Enter your state:
+        <input id="state" name="state" type="text" size="2"
+               onblur="isStateOk(this, document.getElementById('state_help'))" />
+        <span id="state_help"></span>
+    </div>
+
+    <div>
+        Enter your phone number:
+        <input id="phone" name="phone" type="text" size="15"
+               onblur="isPhoneOk(this, document.getElementById('phone_help'))" />
+        <span id="phone_help"></span>
+    </div>
+
+    <div>
+        Enter your email:
+        <input id="email" name="email" type="text" size="30"
+               onblur="isEmailOk(this, document.getElementById('email_help'))" />
+        <span id="email_help"></span>
+    </div>
+
+
+
+</body>
+</html>
