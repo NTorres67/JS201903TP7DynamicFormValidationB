@@ -1,15 +1,42 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <title>JS201903TP7 - Dynamic Form Validatoin</title>
+
+    <script>
+        function editNodeText(regex, input, helpId, helpMessage)            // Checks text added into boxes
+        {
+            if (!regex.test(input))
+            {
+                if (helpID != null)
+                    while (helpId.firstChild)
+                    {
+                        helpId.removeChild(helpId.firstChild);              // Deletes Children
+                    }
+                helpId.appendChild(document.createTextNode(helpId));
+                return false;
+            }
+            else
+            {
+                if (helpId != null)
+                {
+                    while (helpId.firstChild)
+                    {
+                        helpId.removeChild(helpId.firstChild);              // deletes error message
+                    }
+                    return true;
+                }
+            }
+        }
+
+
+
+    </script>
+
+
 </head>
-
-
-
-
-
-
 
 <body>
     <!-- *** Form Validation:  Is used to make sites dynamic
