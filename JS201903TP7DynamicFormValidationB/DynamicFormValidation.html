@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <title>JS201903TP7 - Dynamic Form Validatoin</title>
 
+    <!-- *** editNodeText -->
+
     <script>
         function editNodeText(regex, input, helpId, helpMessage)            // Checks text added into boxes
         {
@@ -29,8 +31,35 @@
                     return true;
                 }
             }
+        }  
+
+
+        function isTheFieldEmpty(inputField, helpID)
+        {
+            return editNodeText(/^[A-Za-z\.\'\-]{2,15})\s?[A-Za-z\.\'\-]{2,15}\s?[A-Za-z\.\'\-]{2,15}/, inputField.value, helpId, "Please enter a valid name.");
         }
 
+        function isAddressOk(inputField, helpId)
+        {
+            return editNodeText(/^[A-Za-z0-9\.\'\-]{5,30}$/, inputField.value, helpId, "Enter a street");
+        }
+
+        function isStateOk(inputField, helpId)
+        {
+            return editNodeText(/^A[LKZR]|C[AOT]|D[EC]|FL|GA|HI|I[IDNA]|K[SY]|LA|M[EDAINSOT]|N[EVHJMYCD]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]$/i, inputField.value, helpId, "Enter a state code");
+        }
+
+        function isPhoneOk(inputField, helpId)
+        {
+            // 1-412 <==> okay to use
+            // 1-(412) <==> okay to use
+            return editNodeText(/^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?[0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7}$/, inputField.value, helpId, "Enter a Phone Number");
+        }
+
+        function isEmailOk(inputField, helpId)
+        {
+            edit editNodeText(/^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/, inputField.value, helpId, "Enter an Email");
+        }
 
 
     </script>
