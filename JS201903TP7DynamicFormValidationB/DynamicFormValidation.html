@@ -17,7 +17,7 @@
                     {
                         helpId.removeChild(helpId.firstChild);              // Deletes Children
                     }
-                helpId.appendChild(document.createTextNode(helpMessage));
+                helpId.appendChild(document.createTextNode(helpMessa));
                 return false;
             }
             else
@@ -34,7 +34,7 @@
         }  
 
 
-        function isTheFieldEmpty(inputField, helpID)
+        function isTheFieldEmpty(inputField, helpId )
         {
             // See if the input value contains any text
             return editNodeText(/^[A-Za-z\.\'\-]{2,15})\s?[A-Za-z\.\'\-]{2,15}\s?[A-Za-z\.\'\-]{2,15}/, inputField.value, helpId, "Please enter a valid name.");
